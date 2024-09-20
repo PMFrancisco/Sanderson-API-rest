@@ -3,8 +3,11 @@ import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocs from "./config/swagger";
 import routes from "./routes";
+import connectDB from "./config/db";
 
 const app: Application = express();
+
+connectDB();
 
 app.use(morgan("dev"));
 app.use(express.json());
